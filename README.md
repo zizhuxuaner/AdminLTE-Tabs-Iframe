@@ -164,5 +164,4 @@ refreshTabById(pageId)
 
 <a id="7-license"></a>
 ## 7. License
-
-(开源免费)
+开源
