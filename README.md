@@ -3,6 +3,8 @@
 
 基于AdminLTE框架,并且集成了iframe的tab页面和对应的交互关系实现,是一款适合中国国情的后台主题UI框架
 
+## 快速上手
+   下载后 直接访问  你的项目目录/pages/index_iframe.html  即可看到效果
 ## 目录结构
 - build/js/iframe 存放所有关于iframe的源代码，强烈建议修改这里的代码
 - dist/js/app_iframe.js 使用grunt构建工具生成的js，属于打包后的js
