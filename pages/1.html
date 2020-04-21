@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="zh-cn">
+<head>
+<meta charset="utf-8" />
+<title>demo</title>
+</head>
+<body>
+            <!-- search form -->
+            <div class="sidebar-form">
+                <div class="input-group">
+                    <input id="searchbox" type="text" class="form-control" placeholder="搜索应用...">
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-flat">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </span>
+                </div>
+            </div>
+            <div id="search-resultbox" style="display: none;" class="modal-content">
+                <ul id="search-results">
+                </ul>
+            </div>
+<script src="../plugins/jQuery/jquery-2.2.3.min.js"></script>
+<script type="text/javascript">  
+var menus = [
+    {
+        id: "1",
+        text: "按钮9",
+        pinyin: 'anniu',
+        url: "UI/buttons_iframe.html",
+        ptype: "app",
+        icon: "fa fa-circle-o"
+    }, {
+        id: "2",
+        text: "图标9",
+        pinyin: 'tubiao',
+        url: "UI/icons_iframe.html",
+        ptype: "app",
+        icon: "fa fa-circle-o"
+    }, {
+        id: "3",
+        text: "综合9",
+        pinyin: 'zonghe',
+        url: "UI/general_iframe.html",
+        ptype: "app",
+        icon: "fa fa-circle-o"
+    }, {
+        id: "4",
+        text: "模态框9",
+        pinyin: 'motaikuang',
+        url: "UI/modals_iframe.html",
+        ptype: "app",
+        icon: "fa fa-circle-o"
+    }, {
+        id: "5",
+        text: "滑动9",
+        pinyin: 'huadong',
+        url: "UI/sliders_iframe.html",
+        ptype: "app",
+        icon: "fa fa-circle-o"
+    }, {
+        id: "6",
+        text: "时间轴9",
+        pinyin: 'shijianzhou',
+        url: "UI/timeline_iframe.html",
+        ptype: "app",
+        icon: "fa fa-circle-o"
+    }, {
+        id: "7",
+        text: "测试9",
+        pinyin: 'ceshi',
+        url: "UI/timeline_iframe.html",
+        ptype: "app",
+        icon: "fa fa-circle-o"
+    }, {
+        id: "8",
+        text: "哦哦哦9",
+        pinyin: 'result',
+        url: "UI/timeline_iframe.html",
+        ptype: "app",
+        icon: "fa fa-circle-o",
+    }
+];
+/*
+ * 返回搜索结果合集
+ */
+function SearchData(data, key) {
+    var arr = [], keyArr = [];
+    key = key.trim();
+    if (key.length === 0) { 
+        return false;
+    }else{
+        keyArr = UniqueArray(key.split(/\s+/)); // 按空格分割并去重
+    }
+    for (var i = 0; i < keyArr.length; i++) {
+       arr = $.merge(arr, SearchKey(data, keyArr[i])); // 合并结果
+    }
+    arr = UniqueArray(arr); // 结果去重
+    return arr;
+}
+/*
+ * 返回关键字匹配合集
+ */
+function SearchKey(data, key) {
+    var arr = [], exp = new RegExp(key);
+    for(var i = 0; i < data.length; i++){
+        if(exp.test(data[i].text) || exp.test(data[i].pinyin) || exp.test(data[i].id)){
+            arr.push(data[i]);
+        }
+    }
+    return arr;
+}
+/*
+ * 去重
+ */
+function UniqueArray(arr){
+    return arr.reduce((next,cur) => next.includes(cur) ? next : [...next,cur],[]);
+}
+/*
+ * 渲染
+ */
+function SearchHtml(data, val) {
+    $('#search-resultbox').show();
+    $('#search-results').html('<li><span class="no-results">No results</span></li>');
+    var result = SearchData(data, val);
+    if (result.length > 0) {
+        var i = 0;
+        var resHtml = '';
+        for (var key in result) {
+            if (i++ > 20) {break; }
+            resHtml += `
+                <li>
+                    <a href="javascript:;" onclick="addTabs({id:'${result[key].id}',title: '${result[key].text}',close: true,url: '${result[key].url}',urlType: \'relative\', ptype: '${result[key].ptype}'});">
+                        <i class="${result[key].icon}"></i>
+                        <span class="title">${result[key].text}</span> <span class="description">Url：${result[key].url}</span>
+                    </a>
+                </li>`;
+        }
+        $('#search-results').html(resHtml);
+    }
+}
+jQuery(function($) {
+    var searchBox = $('#searchbox');
+    // search when typing in search field
+    searchBox.on("keyup", function(event) {
+        var query = $(this).val();
+        if (query == '' || event.which == 27) {
+            $('#search-resultbox').hide();
+            return;
+        } else if (event.which == 13) {
+            var selectedLink = $('#search-resultbox a.selected');
+            if (selectedLink.length != 0) {
+                document.location = selectedLink.attr('href');
+                return;
+            }
+        } else if (event.which == 38 || event.which == 40) {
+            $('#search-resultbox').show();
+            var selected = $('#search-resultbox a.selected');
+            if (selected.length == 0) {
+                $('#search-results').find('a').first().addClass('selected');
+            } else {
+                var next;
+                if (event.which == 40) {
+                    next = selected.parent().next().find('a').first();
+                } else {
+                    next = selected.parent().prev().find('a').first();
+                }
+                if (next.length != 0) {
+                    var resultbox = $('#search-results');
+                    var position = next.position();
+                    selected.removeClass('selected');
+                    next.addClass('selected');
+                }
+            }
+            return;
+        }
+        SearchHtml(menus, query);
+    });
+    // hide the search results on ESC
+    $(document).on("keyup", function(event) {
+        if (event.which == 27) {
+            $('#search-resultbox').hide();
+        }
+    });
+    // hide search results on click to document
+    $(document).bind('click', function(e) {
+        $('#search-resultbox').hide();
+    });
+    // except the following:
+    searchBox.bind('click', function(e) {
+        e.stopPropagation();
+    });
+    $('#search-resultbox').bind('click', function(e) {
+        e.stopPropagation();
+    });
+});
+</script>  
+</body>
+</html>

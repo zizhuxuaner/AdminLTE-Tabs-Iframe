@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="zh-cn">
+<head>
+<meta charset="utf-8" />
+<title>demo</title>
+<style type="text/css">
+    @-webkit-keyframes skeleton-ani {
+      0% {
+        left: -100%
+      }
+
+      to {
+        left: 150%
+      }
+    }
+
+    @keyframes skeleton-ani {
+      0% {
+        left: -100%
+      }
+
+      to {
+        left: 150%
+      }
+    }
+
+    .skt-loading .skeleton {
+      position: relative;
+      overflow: hidden;
+      border: none!important;
+      border-radius: 5px;
+      background-color: rgba(0,0,0,0)!important;
+      background-image: none!important;
+      pointer-events: none;
+    }
+
+    .skt-loading .skeleton:after {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      z-index: 9;
+      width: 100%;
+      height: 100%;
+      background-color: #ebf1f8;
+      display: block
+    }
+
+    .skt-loading .skeleton:not(.not-round):after {
+      border-radius: 4px
+    }
+
+    .skt-loading .skeleton:not(.not-before):before {
+      position: absolute;
+      top: 0;
+      width: 30%;
+      height: 100%;
+      content: "";
+      background: -webkit-gradient(linear,left top,right top,color-stop(0,hsla(0,0%,100%,0)),color-stop(50%,hsla(0,0%,100%,.3)),to(hsla(0,0%,100%,0)));
+      background: -o-linear-gradient(left,hsla(0,0%,100%,0) 0,hsla(0,0%,100%,.3) 50%,hsla(0,0%,100%,0) 100%);
+      background: linear-gradient(90deg,hsla(0,0%,100%,0) 0,hsla(0,0%,100%,.3) 50%,hsla(0,0%,100%,0));
+      -webkit-transform: skewX(-45deg);
+      -ms-transform: skewX(-45deg);
+      transform: skewX(-45deg);
+      z-index: 99;
+      -webkit-animation: skeleton-ani 1s ease infinite;
+      animation: skeleton-ani 1s ease infinite;
+      display: block
+    }
+
+    .skt-loading .skeleton.badge:after {
+      background-color: #f8fafc
+    }
+
+    input {
+      border: 1px solid #dcdcdc;
+      width: 100%;
+    }
+</style>
+</head>
+<body>
+    
+<div id="main" class="skt-loading">
+  <form>
+    <label class="skeleton">First name:</label>
+    <div class="skeleton">
+      <input type="text" name="firstname">
+    </div>
+    <br>
+    <label class="skeleton">Last name:</label>
+    <div class="skeleton">
+      <input type="text" name="lastname">
+    </div>
+  </form>
+
+  <p class="skeleton">请注意表单本身是不可见的。</p>
+
+  <p class="skeleton">同时请注意文本字段的默认宽度是 20 个字符。</p>
+</div>
+<script>
+  setTimeout(() => {
+    var $main = document.getElementById('main');
+    $main.className = $main.className.replace('skt-loading', '')
+  }, 2000)
+</script>
+</body>
+</html>

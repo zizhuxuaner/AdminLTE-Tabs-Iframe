@@ -1,0 +1,824 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>PHPIN Admin</title>
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../dist/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../dist/css/ionicons.min.css">
+    <link rel="stylesheet" href="../dist/css/AdminLTE.css">
+    <link rel="stylesheet" href="../dist/css/skins/all-skins.min.css">
+    <style type="text/css">
+        html {overflow: hidden;}
+    </style>
+    <!--[if lt IE 9]>
+    <script src="../plugins/ie9/html5shiv.min.js"></script>
+    <script src="../plugins/ie9/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body class="hold-transition skin-blue sidebar-mini fixed">
+<div class="wrapper">
+
+    <header class="main-header">
+        <!-- Logo -->
+        <a href="" class="logo">
+            <!-- mini logo for sidebar mini 50x50 pixels -->
+            <span class="logo-mini" style="font-size: 12px;">PHPIN</span>
+            <!-- logo for regular state and mobile devices -->
+            <span class="logo-lg">PHPIN.NET</span>
+        </a>
+        <!-- Header Navbar: style can be found in header.less -->
+        <nav class="navbar navbar-static-top">
+            <!-- Sidebar toggle button-->
+            <a href="javascript:;" class="sidebar-toggle" data-toggle="offcanvas" role="button">
+                <span class="sr-only">切换导航</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </a>
+
+            <div class="navbar-custom-menu pull-left phpin-top-menu">
+                <ul class="nav navbar-nav">
+                    <!-- Notifications: style can be found in dropdown.less -->
+                    <li class="dropdown notifications-menu active" data-type="home">
+                        <a class="dropdown-toggle" href="javascript:;" onclick="TopMenusToLeft('home')">
+                            <i class="fa fa-bookmark"></i> 首页</a>
+                    </li>
+                    <li class="dropdown notifications-menu" data-type="app">
+                        <a class="dropdown-toggle" href="javascript:;" onclick="TopMenusToLeft('app')">
+                            <i class="fa fa fa-user-plus"></i> 系统 </a>
+                    </li>
+                    <li class="dropdown notifications-menu" data-type="system">
+                        <a class="dropdown-toggle" href="javascript:;" onclick="TopMenusToLeft('system')">
+                            <i class="fa fa fa-shopping-bag"></i> 应用</a>
+                    </li>
+                    <li class="dropdown notifications-menu" data-type="a1">
+                        <a class="dropdown-toggle" href="javascript:;" onclick="TopMenusToLeft('a1')">
+                            <i class="fa fa fa-wechat"></i> 模板</a>
+                    </li>
+                    <li class="dropdown notifications-menu" data-type="a2">
+                        <a class="dropdown-toggle" href="javascript:;" onclick="TopMenusToLeft('a2')">
+                            <i class="fa fa-cogs"></i> 插件</a>
+                    </li>
+                    <li class="dropdown notifications-menu" data-type="a3">
+                        <a class="dropdown-toggle" href="javascript:;" onclick="TopMenusToLeft('a3')">
+                            <i class="fa fa-th-large"></i> 数据库</a>
+                    </li>
+                </ul>
+            </div>
+
+
+            <div class="navbar-custom-menu">
+                <ul class="nav navbar-nav">
+                    <!-- Messages: style can be found in dropdown.less-->
+                    <li class="dropdown messages-menu">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            <i class="fa fa-envelope-o"></i>
+                            <span class="label label-success">4</span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li class="header">你有4条未读消息</li>
+                            <li>
+                                <!-- inner menu: contains the actual data -->
+                                <ul class="menu">
+                                    <li><!-- start message -->
+                                        <a href="#">
+                                            <div class="pull-left">
+                                                <img src="../dist/img/user2-160x160.jpg" class="img-circle"
+                                                     alt="User Image">
+                                            </div>
+                                            <h4>
+                                                Support Team
+                                                <small><i class="fa fa-clock-o"></i> 5 mins</small>
+                                            </h4>
+                                            <p>Why not buy a new awesome theme?</p>
+                                        </a>
+                                    </li>
+                                    <!-- end message -->
+                                    <li>
+                                        <a href="#">
+                                            <div class="pull-left">
+                                                <img src="../dist/img/user3-128x128.jpg" class="img-circle"
+                                                     alt="User Image">
+                                            </div>
+                                            <h4>
+                                                AdminLTE Design Team
+                                                <small><i class="fa fa-clock-o"></i> 2 hours</small>
+                                            </h4>
+                                            <p>Why not buy a new awesome theme?</p>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <div class="pull-left">
+                                                <img src="../dist/img/user4-128x128.jpg" class="img-circle"
+                                                     alt="User Image">
+                                            </div>
+                                            <h4>
+                                                Developers
+                                                <small><i class="fa fa-clock-o"></i> Today</small>
+                                            </h4>
+                                            <p>Why not buy a new awesome theme?</p>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <div class="pull-left">
+                                                <img src="../dist/img/user3-128x128.jpg" class="img-circle"
+                                                     alt="User Image">
+                                            </div>
+                                            <h4>
+                                                Sales Department
+                                                <small><i class="fa fa-clock-o"></i> Yesterday</small>
+                                            </h4>
+                                            <p>Why not buy a new awesome theme?</p>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <div class="pull-left">
+                                                <img src="../dist/img/user4-128x128.jpg" class="img-circle"
+                                                     alt="User Image">
+                                            </div>
+                                            <h4>
+                                                Reviewers
+                                                <small><i class="fa fa-clock-o"></i> 2 days</small>
+                                            </h4>
+                                            <p>Why not buy a new awesome theme?</p>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="footer"><a href="#">See All Messages</a></li>
+                        </ul>
+                    </li>
+                    <!-- Notifications: style can be found in dropdown.less -->
+                    <li class="dropdown notifications-menu">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            <i class="fa fa-bell-o"></i>
+                            <span class="label label-warning">10</span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li class="header">你有10个新通知</li>
+                            <li>
+                                <!-- inner menu: contains the actual data -->
+                                <ul class="menu">
+                                    <li>
+                                        <a href="#">
+                                            <i class="fa fa-users text-aqua"></i> 5 new members joined today
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <i class="fa fa-warning text-yellow"></i> Very long description here that
+                                            may not fit into the
+                                            page and may cause design problems
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <i class="fa fa-users text-red"></i> 5 new members joined
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <i class="fa fa-shopping-cart text-green"></i> 25 sales made
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <i class="fa fa-user text-light-blue"></i> You changed your username
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="footer"><a href="#">View all</a></li>
+                        </ul>
+                    </li>
+                    <!-- Tasks: style can be found in dropdown.less -->
+                    <li class="dropdown tasks-menu">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            <i class="fa fa-flag-o"></i>
+                            <span class="label label-danger">9</span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li class="header">你有9个任务</li>
+                            <li>
+                                <!-- inner menu: contains the actual data -->
+                                <ul class="menu">
+                                    <li><!-- Task item -->
+                                        <a href="#">
+                                            <h3>
+                                                Design some buttons
+                                                <small class="pull-right">20%</small>
+                                            </h3>
+                                            <div class="progress xs">
+                                                <div class="progress-bar progress-bar-aqua" style="width: 20%"
+                                                     role="progressbar" aria-valuenow="20" aria-valuemin="0"
+                                                     aria-valuemax="100">
+                                                    <span class="sr-only">20% Complete</span>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <!-- end task item -->
+                                    <li><!-- Task item -->
+                                        <a href="#">
+                                            <h3>
+                                                Create a nice theme
+                                                <small class="pull-right">40%</small>
+                                            </h3>
+                                            <div class="progress xs">
+                                                <div class="progress-bar progress-bar-green" style="width: 40%"
+                                                     role="progressbar" aria-valuenow="20" aria-valuemin="0"
+                                                     aria-valuemax="100">
+                                                    <span class="sr-only">40% Complete</span>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <!-- end task item -->
+                                    <li><!-- Task item -->
+                                        <a href="#">
+                                            <h3>
+                                                Some task I need to do
+                                                <small class="pull-right">60%</small>
+                                            </h3>
+                                            <div class="progress xs">
+                                                <div class="progress-bar progress-bar-red" style="width: 60%"
+                                                     role="progressbar" aria-valuenow="20" aria-valuemin="0"
+                                                     aria-valuemax="100">
+                                                    <span class="sr-only">60% Complete</span>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <!-- end task item -->
+                                    <li><!-- Task item -->
+                                        <a href="#">
+                                            <h3>
+                                                Make beautiful transitions
+                                                <small class="pull-right">80%</small>
+                                            </h3>
+                                            <div class="progress xs">
+                                                <div class="progress-bar progress-bar-yellow" style="width: 80%"
+                                                     role="progressbar" aria-valuenow="20" aria-valuemin="0"
+                                                     aria-valuemax="100">
+                                                    <span class="sr-only">80% Complete</span>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <!-- end task item -->
+                                </ul>
+                            </li>
+                            <li class="footer">
+                                <a href="#">View all tasks</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <!-- User Account: style can be found in dropdown.less -->
+                    <li class="dropdown user user-menu">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            <img src="../dist/img/user2-160x160.jpg" class="user-image" alt="User Image">
+                            <span class="hidden-xs">admin</span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <!-- User image -->
+                            <li class="user-header">
+                                <img src="../dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+
+                                <p>
+                                    admin - 超级管理员
+                                    <small>2012年11月注册</small>
+                                </p>
+                            </li>
+                            <!-- Menu Body -->
+                            <li class="user-body">
+                                <div class="row">
+                                    <div class="col-xs-4 text-center">
+                                        <a href="#">Followers</a>
+                                    </div>
+                                    <div class="col-xs-4 text-center">
+                                        <a href="#">Sales</a>
+                                    </div>
+                                    <div class="col-xs-4 text-center">
+                                        <a href="#">Friends</a>
+                                    </div>
+                                </div>
+                                <!-- /.row -->
+                            </li>
+                            <!-- Menu Footer-->
+                            <li class="user-footer">
+                                <div class="pull-left">
+                                    <a href="#" class="btn btn-default btn-flat">资料</a>
+                                </div>
+                                <div class="pull-right">
+                                    <a href="#" class="btn btn-default btn-flat">退出</a>
+                                </div>
+                            </li>
+                        </ul>
+                    </li>
+                    <!-- Control Sidebar Toggle Button -->
+                    <li>
+                        <a href="#" data-toggle="control-sidebar"><i class="fa fa-gears"></i></a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <!-- Left side column. contains the logo and sidebar -->
+    <aside class="main-sidebar">
+        <!-- sidebar: style can be found in sidebar.less -->
+        <section class="sidebar">
+            <!-- Sidebar user panel -->
+            <div class="user-panel">
+                <div class="pull-left image">
+                    <img src="../dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+                </div>
+                <div class="pull-left info">
+                    <p>admin</p>
+                    <a href="#"><i class="fa fa-circle text-success"></i> 在线</a>
+                </div>
+            </div>
+            <!-- search form -->
+            <div class="sidebar-form phpin-sidebar-form">
+                <div class="input-group">
+                    <input id="searchbox" type="text" class="form-control" placeholder="搜索应用...">
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-flat">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </span>
+                </div>
+            </div>
+
+            <div id="searchresultboxmask" style="display: none;" >
+                <div id="search-resultbox" style="display: none;" class="modal-content">
+                    <ul id="search-results"></ul>
+                </div>
+            </div>
+
+            <!-- /.search form -->
+            <!-- sidebar menu: : style can be found in sidebar.less -->
+            <ul class="sidebar-menu phpin-sidebar-menu">
+                <li class="header">其他内容</li>
+                <li class="treeview" data-level="1" data-type="home" data-tabid="0222"><a class="nav-link" onclick="addTabs({id:'0222',title: '首页2',url: 'welcome_iframe.html', ptype: 'home'});"><i class="fa fa-circle-o"></i><span class="title menu-text">首页</span></a></li>
+                <li class="treeview" data-level="1" data-type="home" data-tabid="900111222"><a class="nav-link" onclick="addTabs({id:'900111222',title: '按钮',url: 'UI/buttons_iframe.html', ptype: 'home'});"><i class="fa fa-circle-o"></i><span class="title menu-text">按钮</span></a></li>
+                <li class="treeview" data-level="1" data-type="home" data-tabid="900121222"><a class="nav-link" onclick="addTabs({id:'900121222',title: '图标',url: 'UI/icons_iframe.html', ptype: 'home'});"><i class="fa fa-circle-o"></i><span class="title menu-text">图标</span></a></li>
+                <li class="treeview" data-level="1" data-type="home" data-tabid="900131222"><a class="nav-link" onclick="addTabs({id:'900131222',title: '综合',url: 'UI/general_iframe.html', ptype: 'home'});"><i class="fa fa-circle-o"></i><span class="title menu-text">综合</span></a></li>
+                <li class="treeview" data-level="1" data-type="home" data-tabid="900141222"><a class="nav-link" onclick="addTabs({id:'900141222',title: '模态框',url: 'UI/modals_iframe.html', ptype: 'home'});"><i class="fa fa-circle-o"></i><span class="title menu-text">模态框</span></a></li>
+                <li class="treeview" data-level="1" data-type="home" data-tabid="900151222"><a class="nav-link" onclick="addTabs({id:'900151222',title: '滑动',url: 'UI/sliders_iframe.html', ptype: 'home'});"><i class="fa fa-circle-o"></i><span class="title menu-text">滑动</span></a></li>
+                <li class="treeview" data-level="1" data-type="home" data-tabid="900161222"><a class="nav-link" onclick="addTabs({id:'900161222',title: '时间轴',url: 'UI/timeline_iframe.html', ptype: 'home'});"><i class="fa fa-circle-o"></i><span class="title menu-text">时间轴</span></a></li>
+
+                <li class="treeview show active" data-level="0" data-type="home"><a class="nav-link"><i class="fa fa-laptop"></i><span class="title menu-text">首页默认显示</span><span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span></a>
+                    <ul class="treeview-menu menu-open" style="display: block;">
+                        <li class="treeview active" data-level="1" data-type="home" data-tabid="0"><a class="nav-link" onclick="addTabs({id:'0',title: '按钮',url: 'welcome_iframe.html', ptype: 'home'});"><i class="fa fa-circle-o"></i><span class="title menu-text">首页</span></a></li>
+                        <li class="treeview" data-level="1" data-type="home" data-tabid="900111"><a class="nav-link" onclick="addTabs({id:'900111',title: '按钮',url: 'UI/buttons_iframe.html', ptype: 'home'});"><i class="fa fa-circle-o"></i><span class="title menu-text">按钮</span></a></li>
+                        <li class="treeview" data-level="1" data-type="home" data-tabid="900121"><a class="nav-link" onclick="addTabs({id:'900121',title: '图标',url: 'UI/icons_iframe.html', ptype: 'home'});"><i class="fa fa-circle-o"></i><span class="title menu-text">图标</span></a></li>
+                        <li class="treeview" data-level="1" data-type="home" data-tabid="900131"><a class="nav-link" onclick="addTabs({id:'900131',title: '综合',url: 'UI/general_iframe.html', ptype: 'home'});"><i class="fa fa-circle-o"></i><span class="title menu-text">综合</span></a></li>
+                        <li class="treeview" data-level="1" data-type="home" data-tabid="900141"><a class="nav-link" onclick="addTabs({id:'900141',title: '模态框',url: 'UI/modals_iframe.html', ptype: 'home'});"><i class="fa fa-circle-o"></i><span class="title menu-text">模态框</span></a></li>
+                        <li class="treeview" data-level="1" data-type="home" data-tabid="900151"><a class="nav-link" onclick="addTabs({id:'900151',title: '滑动',url: 'UI/sliders_iframe.html', ptype: 'home'});"><i class="fa fa-circle-o"></i><span class="title menu-text">滑动</span></a></li>
+                        <li class="treeview" data-level="1" data-type="home" data-tabid="900161"><a class="nav-link" onclick="addTabs({id:'900161',title: '时间轴',url: 'UI/timeline_iframe.html', ptype: 'home'});"><i class="fa fa-circle-o"></i><span class="title menu-text">时间轴</span></a></li>
+                    </ul>
+                </li>
+                <li class="treeview hide" data-level="0" data-type="app"><a class="nav-link"><i class="fa fa-laptop"></i><span class="title menu-text">UI元素</span><span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span></a>
+                    <ul class="treeview-menu" style="display: none;">
+                        <li class="treeview" data-level="1" data-type="app" data-tabid="90011"><a class="nav-link" onclick="addTabs({id:'90011',title: '按钮',url: 'UI/buttons_iframe.html', ptype: 'app'});"><i class="fa fa-circle-o"></i><span class="title menu-text">按钮</span></a></li>
+                        <li class="treeview" data-level="1" data-type="app" data-tabid="90012"><a class="nav-link" onclick="addTabs({id:'90012',title: '图标',url: 'UI/icons_iframe.html', ptype: 'app'});"><i class="fa fa-circle-o"></i><span class="title menu-text">图标</span></a></li>
+                        <li class="treeview" data-level="1" data-type="app" data-tabid="90013"><a class="nav-link" onclick="addTabs({id:'90013',title: '综合',url: 'UI/general_iframe.html', ptype: 'app'});"><i class="fa fa-circle-o"></i><span class="title menu-text">综合</span></a></li>
+                        <li class="treeview" data-level="1" data-type="app" data-tabid="90014"><a class="nav-link" onclick="addTabs({id:'90014',title: '模态框',url: 'UI/modals_iframe.html', ptype: 'app'});"><i class="fa fa-circle-o"></i><span class="title menu-text">模态框</span></a></li>
+                        <li class="treeview" data-level="1" data-type="app" data-tabid="90015"><a class="nav-link" onclick="addTabs({id:'90015',title: '滑动',url: 'UI/sliders_iframe.html', ptype: 'app'});"><i class="fa fa-circle-o"></i><span class="title menu-text">滑动</span></a></li>
+                        <li class="treeview" data-level="1" data-type="app" data-tabid="90016"><a class="nav-link" onclick="addTabs({id:'90016',title: '时间轴',url: 'UI/timeline_iframe.html', ptype: 'app'});"><i class="fa fa-circle-o"></i><span class="title menu-text">时间轴</span></a></li>
+                    </ul>
+                </li>
+                <li class="treeview hide" data-level="0" data-type="system"><a class="nav-link"><i class="fa fa-edit"></i><span class="title menu-text">表单</span><span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span></a>
+                    <ul class="treeview-menu" style="display: none;">
+                        <li class="treeview" data-level="1" data-type="system" data-tabid="90021"><a class="nav-link" onclick="addTabs({id:'90021',title: '高级演示',url: 'forms/advanced_iframe.html', ptype: 'system'});"><i class="fa fa-circle-o"></i><span class="title menu-text">高级演示</span></a></li>
+                        <li class="treeview" data-level="1" data-type="system" data-tabid="90022"><a class="nav-link" onclick="addTabs({id:'90022',title: '综合演示',url: 'forms/general_iframe.html', ptype: 'system'});"><i class="fa fa-circle-o"></i><span class="title menu-text">综合演示</span></a></li>
+                        <li class="treeview" data-level="1" data-type="system" data-tabid="90023"><a class="nav-link" onclick="addTabs({id:'90023',title: '富文本编辑器',url: 'forms/editors_iframe.html', ptype: 'system'});"><i class="fa fa-circle-o"></i><span class="title menu-text">富文本编辑器</span></a></li>
+                        <li class="treeview" data-level="1" data-type="system" data-tabid="90024"><a class="nav-link" onclick="addTabs({id:'90024',title: '百度首页1',url: 'https://www.baidu.com', ptype: 'system'});"><i class="fa fa-circle-o"></i><span class="title menu-text">百度首页1</span></a></li>
+                        <li class="treeview" data-level="1" data-type="system" data-tabid="90025"><a class="nav-link" onclick="addTabs({id:'90025',title: '百度首页2',url: 'https://www.baidu.com', ptype: 'system'});"><i class="fa fa-circle-o"></i><span class="title menu-text">百度首页2</span></a></li>
+                        <li class="treeview" data-level="1" data-type="system" data-tabid="90026"><a class="nav-link" onclick="addTabs({id:'90026',title: '百度首页3',url: 'https://www.baidu.com', ptype: 'system'});"><i class="fa fa-circle-o"></i><span class="title menu-text">百度首页3</span></a></li>
+                        <li class="treeview" data-level="1" data-type="system" data-tabid="90027"><a class="nav-link" onclick="addTabs({id:'90027',title: '百度首页4',url: 'https://www.baidu.com', ptype: 'system'});"><i class="fa fa-circle-o"></i><span class="title menu-text">百度首页4</span></a></li>
+                        <li class="treeview" data-level="1" data-type="system" data-tabid="90028"><a class="nav-link" onclick="addTabs({id:'90028',title: '百度首页5',url: 'https://www.baidu.com', ptype: 'system'});"><i class="fa fa-circle-o"></i><span class="title menu-text">百度首页5</span></a></li>
+                        <li class="treeview" data-level="1" data-type="system" data-tabid="90029"><a class="nav-link" onclick="addTabs({id:'90029',title: '百度首页6',url: 'https://www.baidu.com', ptype: 'system'});"><i class="fa fa-circle-o"></i><span class="title menu-text">百度首页6</span></a></li>
+                        <li class="treeview" data-level="1" data-type="system" data-tabid="90030"><a class="nav-link" onclick="addTabs({id:'90030',title: '百度首页7',url: 'https://www.baidu.com', ptype: 'system'});"><i class="fa fa-circle-o"></i><span class="title menu-text">百度首页7</span></a></li>
+                        <li class="treeview" data-level="1" data-type="system" data-tabid="90031"><a class="nav-link" onclick="addTabs({id:'90031',title: '百度首页8',url: 'https://www.baidu.com', ptype: 'system'});"><i class="fa fa-circle-o"></i><span class="title menu-text">百度首页8</span></a></li>
+                        <li class="treeview" data-level="1" data-type="system" data-tabid="90032"><a class="nav-link" onclick="addTabs({id:'90032',title: '百度首页9',url: 'https://www.baidu.com', ptype: 'system'});"><i class="fa fa-circle-o"></i><span class="title menu-text">百度首页9</span></a></li>
+                        <li class="treeview" data-level="1" data-type="system" data-tabid="90033"><a class="nav-link" onclick="addTabs({id:'90033',title: '百度首页10',url: 'https://www.baidu.com', ptype: 'system'});"><i class="fa fa-circle-o"></i><span class="title menu-text">百度首页10</span></a></li>
+                        <li class="treeview" data-level="1" data-type="system" data-tabid="90034"><a class="nav-link" onclick="addTabs({id:'90034',title: '百度首页11',url: 'https://www.baidu.com', ptype: 'system'});"><i class="fa fa-circle-o"></i><span class="title menu-text">百度首页11</span></a></li>
+                        <li class="treeview" data-level="1" data-type="system" data-tabid="90035"><a class="nav-link" onclick="addTabs({id:'90035',title: '百度首页12',url: 'https://www.baidu.com', ptype: 'system'});"><i class="fa fa-circle-o"></i><span class="title menu-text">百度首页12</span></a></li>
+                        <li class="treeview" data-level="1" data-type="system" data-tabid="90036"><a class="nav-link" onclick="addTabs({id:'90036',title: '百度首页13',url: 'https://www.baidu.com', ptype: 'system'});"><i class="fa fa-circle-o"></i><span class="title menu-text">百度首页13</span></a></li>
+                        <li class="treeview" data-level="1" data-type="system" data-tabid="90037"><a class="nav-link" onclick="addTabs({id:'90037',title: '百度首页14',url: 'https://www.baidu.com', ptype: 'system'});"><i class="fa fa-circle-o"></i><span class="title menu-text">百度首页14</span></a></li>
+                    </ul>
+                </li>
+                <li class="treeview hide" data-level="0" data-type="system"><a class="nav-link"><i class="fa fa-edit"></i><span class="title menu-text">表单2</span><span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span></a>
+                    <ul class="treeview-menu" style="display: none;">
+                        <li class="treeview" data-level="1" data-type="system" data-tabid="900212"><a class="nav-link" onclick="addTabs({id:'900212',title: '高级演示',url: 'forms/advanced_iframe.html', ptype: 'system'});"><i class="fa fa-circle-o"></i><span class="title menu-text">高级演示</span></a></li>
+                        <li class="treeview" data-level="1" data-type="system" data-tabid="900222"><a class="nav-link" onclick="addTabs({id:'900222',title: '综合演示',url: 'forms/general_iframe.html', ptype: 'system'});"><i class="fa fa-circle-o"></i><span class="title menu-text">综合演示</span></a></li>
+                        <li class="treeview" data-level="1" data-type="system" data-tabid="900232"><a class="nav-link" onclick="addTabs({id:'900232',title: '富文本编辑器',url: 'forms/editors_iframe.html', ptype: 'system'});"><i class="fa fa-circle-o"></i><span class="title menu-text">富文本编辑器</span></a></li>
+                        <li class="treeview" data-level="1" data-type="system" data-tabid="900242"><a class="nav-link" onclick="addTabs({id:'900242',title: '百度首页1',url: 'https://www.baidu.com', ptype: 'system'});"><i class="fa fa-circle-o"></i><span class="title menu-text">百度首页1</span></a></li>
+                        <li class="treeview" data-level="1" data-type="system" data-tabid="900252"><a class="nav-link" onclick="addTabs({id:'900252',title: '百度首页2',url: 'https://www.baidu.com', ptype: 'system'});"><i class="fa fa-circle-o"></i><span class="title menu-text">百度首页2</span></a></li>
+                        <li class="treeview" data-level="1" data-type="system" data-tabid="900262"><a class="nav-link" onclick="addTabs({id:'900262',title: '百度首页3',url: 'https://www.baidu.com', ptype: 'system'});"><i class="fa fa-circle-o"></i><span class="title menu-text">百度首页3</span></a></li>
+                        <li class="treeview" data-level="1" data-type="system" data-tabid="900272"><a class="nav-link" onclick="addTabs({id:'900272',title: '百度首页4',url: 'https://www.baidu.com', ptype: 'system'});"><i class="fa fa-circle-o"></i><span class="title menu-text">百度首页4</span></a></li>
+                        <li class="treeview" data-level="1" data-type="system" data-tabid="900282"><a class="nav-link" onclick="addTabs({id:'900282',title: '百度首页5',url: 'https://www.baidu.com', ptype: 'system'});"><i class="fa fa-circle-o"></i><span class="title menu-text">百度首页5</span></a></li>
+                        <li class="treeview" data-level="1" data-type="system" data-tabid="900292"><a class="nav-link" onclick="addTabs({id:'900292',title: '百度首页6',url: 'https://www.baidu.com', ptype: 'system'});"><i class="fa fa-circle-o"></i><span class="title menu-text">百度首页6</span></a></li>
+                        <li class="treeview" data-level="1" data-type="system" data-tabid="900302"><a class="nav-link" onclick="addTabs({id:'900302',title: '百度首页7',url: 'https://www.baidu.com', ptype: 'system'});"><i class="fa fa-circle-o"></i><span class="title menu-text">百度首页7</span></a></li>
+                        <li class="treeview" data-level="1" data-type="system" data-tabid="900312"><a class="nav-link" onclick="addTabs({id:'900312',title: '百度首页8',url: 'https://www.baidu.com', ptype: 'system'});"><i class="fa fa-circle-o"></i><span class="title menu-text">百度首页8</span></a></li>
+                        <li class="treeview" data-level="1" data-type="system" data-tabid="900322"><a class="nav-link" onclick="addTabs({id:'900322',title: '百度首页9',url: 'https://www.baidu.com', ptype: 'system'});"><i class="fa fa-circle-o"></i><span class="title menu-text">百度首页9</span></a></li>
+                        <li class="treeview" data-level="1" data-type="system" data-tabid="900332"><a class="nav-link" onclick="addTabs({id:'900332',title: '百度首页10',url: 'https://www.baidu.com', ptype: 'system'});"><i class="fa fa-circle-o"></i><span class="title menu-text">百度首页10</span></a></li>
+                        <li class="treeview" data-level="1" data-type="system" data-tabid="900342"><a class="nav-link" onclick="addTabs({id:'900342',title: '百度首页11',url: 'https://www.baidu.com', ptype: 'system'});"><i class="fa fa-circle-o"></i><span class="title menu-text">百度首页11</span></a></li>
+                        <li class="treeview" data-level="1" data-type="system" data-tabid="900352"><a class="nav-link" onclick="addTabs({id:'900352',title: '百度首页12',url: 'https://www.baidu.com', ptype: 'system'});"><i class="fa fa-circle-o"></i><span class="title menu-text">百度首页12</span></a></li>
+                        <li class="treeview" data-level="1" data-type="system" data-tabid="900362"><a class="nav-link" onclick="addTabs({id:'900362',title: '百度首页13',url: 'https://www.baidu.com', ptype: 'system'});"><i class="fa fa-circle-o"></i><span class="title menu-text">百度首页13</span></a></li>
+                        <li class="treeview" data-level="1" data-type="system" data-tabid="900372"><a class="nav-link" onclick="addTabs({id:'900372',title: '百度首页14',url: 'https://www.baidu.com', ptype: 'system'});"><i class="fa fa-circle-o"></i><span class="title menu-text">百度首页14</span></a></li>
+                    </ul>
+                </li>
+            </ul>
+        </section>
+        <!-- /.sidebar -->
+    </aside>
+
+    <!-- Content Wrapper. Contains page content -->
+    <div class="content-wrapper" id="content-wrapper" style="min-height: 421px;">
+        <!--bootstrap tab风格 多标签页-->
+        <div class="content-tabs">
+            <button class="roll-nav roll-left tabLeft" onclick="scrollTabLeft()">
+                <i class="fa fa-backward"></i>
+            </button>
+            <nav class="page-tabs menuTabs tab-ui-menu" id="tab-menu">
+                <div class="page-tabs-content" style="margin-left: 0px;">
+
+                </div>
+            </nav>
+            <button class="roll-nav roll-right tabRight" onclick="scrollTabRight()">
+                <i class="fa fa-forward" style="margin-left: 3px;"></i>
+            </button>
+            <div class="btn-group roll-nav roll-right">
+                <button class="dropdown tabClose" data-toggle="dropdown">操作 <i class="fa fa-caret-down" style="padding-left: 3px;"></i></button>
+                <ul class="dropdown-menu dropdown-menu-right" style="min-width: 128px;">
+                    <li><a class="tabReload" href="javascript:;" onclick="refreshTab()">刷新当前</a></li>
+                    <li><a class="tabCloseCurrent" href="javascript:;" onclick="closeCurrentTab()">关闭当前</a></li>
+                    <li><a class="tabCloseOther" href="javascript:;" onclick="closeOtherTabs()">关闭其他</a></li>
+                    <li><a class="tabCloseAll" href="javascript:;" onclick="closeOtherTabs(true)">关闭全部</a></li>
+                </ul>
+            </div>
+            <button class="roll-nav roll-right fullscreen" onclick="App.handleFullScreen()"><i class="fa fa-arrows-alt"></i></button>
+        </div>
+        <div class="content-iframe ">
+            <div class="tab-content " id="tab-content">
+            </div>
+        </div>
+    </div>
+    <!-- /.content-wrapper -->
+
+    <footer class="main-footer">
+        <div class="pull-right hidden-xs">
+            <b>版本</b> 2.3.8
+        </div>
+        <strong>Copyright &copy; 2020 - 2050 <a href="https://www.phpin.net">PHPIN.NET</a></strong> 版权所有
+    </footer>
+
+    <!-- Control Sidebar -->
+    <aside class="control-sidebar control-sidebar-dark">
+        <!-- Create the tabs -->
+        <ul class="nav nav-tabs nav-justified control-sidebar-tabs">
+            <li><a href="#control-sidebar-home-tab" data-toggle="tab"><i class="fa fa-home"></i></a></li>
+            <li><a href="#control-sidebar-settings-tab" data-toggle="tab"><i class="fa fa-gears"></i></a></li>
+        </ul>
+        <!-- Tab panes -->
+        <div class="tab-content">
+            <!-- Home tab content -->
+            <div class="tab-pane" id="control-sidebar-home-tab">
+                <h3 class="control-sidebar-heading">Recent Activity</h3>
+                <ul class="control-sidebar-menu">
+                    <li>
+                        <a href="javascript:void(0)">
+                            <i class="menu-icon fa fa-birthday-cake bg-red"></i>
+
+                            <div class="menu-info">
+                                <h4 class="control-sidebar-subheading">Langdon's Birthday</h4>
+
+                                <p>Will be 23 on April 24th</p>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0)">
+                            <i class="menu-icon fa fa-user bg-yellow"></i>
+
+                            <div class="menu-info">
+                                <h4 class="control-sidebar-subheading">Frodo Updated His Profile</h4>
+
+                                <p>New phone +1(800)555-1234</p>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0)">
+                            <i class="menu-icon fa fa-envelope-o bg-light-blue"></i>
+
+                            <div class="menu-info">
+                                <h4 class="control-sidebar-subheading">Nora Joined Mailing List</h4>
+
+                                <p>nora@example.com</p>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0)">
+                            <i class="menu-icon fa fa-file-code-o bg-green"></i>
+
+                            <div class="menu-info">
+                                <h4 class="control-sidebar-subheading">Cron Job 254 Executed</h4>
+
+                                <p>Execution time 5 seconds</p>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+                <!-- /.control-sidebar-menu -->
+
+                <h3 class="control-sidebar-heading">Tasks Progress</h3>
+                <ul class="control-sidebar-menu">
+                    <li>
+                        <a href="javascript:void(0)">
+                            <h4 class="control-sidebar-subheading">
+                                Custom Template Design
+                                <span class="label label-danger pull-right">70%</span>
+                            </h4>
+
+                            <div class="progress progress-xxs">
+                                <div class="progress-bar progress-bar-danger" style="width: 70%"></div>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0)">
+                            <h4 class="control-sidebar-subheading">
+                                Update Resume
+                                <span class="label label-success pull-right">95%</span>
+                            </h4>
+
+                            <div class="progress progress-xxs">
+                                <div class="progress-bar progress-bar-success" style="width: 95%"></div>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0)">
+                            <h4 class="control-sidebar-subheading">
+                                Laravel Integration
+                                <span class="label label-warning pull-right">50%</span>
+                            </h4>
+
+                            <div class="progress progress-xxs">
+                                <div class="progress-bar progress-bar-warning" style="width: 50%"></div>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0)">
+                            <h4 class="control-sidebar-subheading">
+                                Back End Framework
+                                <span class="label label-primary pull-right">68%</span>
+                            </h4>
+
+                            <div class="progress progress-xxs">
+                                <div class="progress-bar progress-bar-primary" style="width: 68%"></div>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+                <!-- /.control-sidebar-menu -->
+
+            </div>
+            <!-- /.tab-pane -->
+            <!-- Stats tab content -->
+            <div class="tab-pane" id="control-sidebar-stats-tab">Stats Tab Content</div>
+            <!-- /.tab-pane -->
+            <!-- Settings tab content -->
+            <div class="tab-pane" id="control-sidebar-settings-tab">
+                <form method="post">
+                    <h3 class="control-sidebar-heading">General Settings</h3>
+
+                    <div class="form-group">
+                        <label class="control-sidebar-subheading">
+                            Report panel usage
+                            <input type="checkbox" class="pull-right" checked>
+                        </label>
+
+                        <p>
+                            Some information about this general settings option
+                        </p>
+                    </div>
+                    <!-- /.form-group -->
+
+                    <div class="form-group">
+                        <label class="control-sidebar-subheading">
+                            Allow mail redirect
+                            <input type="checkbox" class="pull-right" checked>
+                        </label>
+
+                        <p>
+                            Other sets of options are available
+                        </p>
+                    </div>
+                    <!-- /.form-group -->
+
+                    <div class="form-group">
+                        <label class="control-sidebar-subheading">
+                            Expose author name in posts
+                            <input type="checkbox" class="pull-right" checked>
+                        </label>
+
+                        <p>
+                            Allow the user to show his name in blog posts
+                        </p>
+                    </div>
+                    <!-- /.form-group -->
+
+                    <h3 class="control-sidebar-heading">Chat Settings</h3>
+
+                    <div class="form-group">
+                        <label class="control-sidebar-subheading">
+                            Show me as online
+                            <input type="checkbox" class="pull-right" checked>
+                        </label>
+                    </div>
+                    <!-- /.form-group -->
+
+                    <div class="form-group">
+                        <label class="control-sidebar-subheading">
+                            Turn off notifications
+                            <input type="checkbox" class="pull-right">
+                        </label>
+                    </div>
+                    <!-- /.form-group -->
+
+                    <div class="form-group">
+                        <label class="control-sidebar-subheading">
+                            Delete chat history
+                            <a href="javascript:void(0)" class="text-red pull-right"><i class="fa fa-trash-o"></i></a>
+                        </label>
+                    </div>
+                    <!-- /.form-group -->
+                </form>
+            </div>
+            <!-- /.tab-pane -->
+        </div>
+    </aside>
+    <!-- /.control-sidebar -->
+    <!-- Add the sidebar's background. This div must be placed
+         immediately after the control sidebar -->
+    <div class="control-sidebar-bg"></div>
+</div>
+<!-- ./wrapper -->
+
+<!-- jQuery 2.2.3 -->
+<script src="../plugins/jQuery/jquery-2.2.3.min.js"></script>
+<!-- Bootstrap 3.3.6 -->
+<script src="../bootstrap/js/bootstrap.min.js"></script>
+<!-- Slimscroll -->
+<!--<script src="../plugins/slimScroll/jquery.slimscroll.min.js"></script>-->
+<!--&lt;!&ndash; FastClick &ndash;&gt;-->
+<!--<script src="../plugins/fastclick/fastclick.js"></script>-->
+<!-- AdminLTE App -->
+<script src="../dist/js/app.js"></script>
+<!-- AdminLTE for demo purposes -->
+<script src="../dist/js/demo.js"></script>
+<!--tabs-->
+<script src="../dist/js/app_iframe.js"></script>
+<script>
+/*
+ * 搜索数据源
+*/
+var menus = [
+    {
+        id: "1",
+        text: "按钮9",
+        pinyin: 'anniu',
+        url: "UI/buttons_iframe.html",
+        ptype: "app",
+        icon: "fa fa-circle-o"
+    }, {
+        id: "2",
+        text: "图标9",
+        pinyin: 'tubiao',
+        url: "UI/icons_iframe.html",
+        ptype: "app",
+        icon: "fa fa-circle-o"
+    }, {
+        id: "3",
+        text: "综合9",
+        pinyin: 'zonghe',
+        url: "UI/general_iframe.html",
+        ptype: "app",
+        icon: "fa fa-circle-o"
+    }, {
+        id: "4",
+        text: "模态框9",
+        pinyin: 'motaikuang',
+        url: "UI/modals_iframe.html",
+        ptype: "app",
+        icon: "fa fa-circle-o"
+    }, {
+        id: "5",
+        text: "滑动9",
+        pinyin: 'huadong',
+        url: "UI/sliders_iframe.html",
+        ptype: "app",
+        icon: "fa fa-circle-o"
+    }, {
+        id: "6",
+        text: "时间轴9",
+        pinyin: 'shijianzhou',
+        url: "UI/timeline_iframe.html",
+        ptype: "app",
+        icon: "fa fa-circle-o"
+    }, {
+        id: "7",
+        text: "测试9",
+        pinyin: 'ceshi',
+        url: "UI/timeline_iframe.html",
+        ptype: "app",
+        icon: "fa fa-circle-o"
+    }, {
+        id: "8",
+        text: "哦哦哦9",
+        pinyin: 'ba',
+        url: "UI/timeline_iframe.html",
+        ptype: "app",
+        icon: "fa fa-circle-o",
+    }, {
+        id: "9",
+        text: "哦哦哦9",
+        pinyin: 'jiu',
+        url: "UI/timeline_iframe.html",
+        ptype: "app",
+        icon: "fa fa-circle-o",
+    }, {
+        id: "10",
+        text: "哦哦哦9",
+        pinyin: 'shi',
+        url: "UI/timeline_iframe.html",
+        ptype: "app",
+        icon: "fa fa-circle-o",
+    }, {
+        id: "11",
+        text: "哦哦哦9",
+        pinyin: 'shiyi',
+        url: "UI/timeline_iframe.html",
+        ptype: "app",
+        icon: "fa fa-circle-o",
+    }, {
+        id: "12",
+        text: "哦哦哦9",
+        pinyin: 'shier',
+        url: "UI/timeline_iframe.html",
+        ptype: "app",
+        icon: "fa fa-circle-o",
+    }, {
+        id: "13",
+        text: "哦哦哦9",
+        pinyin: 'shisan',
+        url: "UI/timeline_iframe.html",
+        ptype: "app",
+        icon: "fa fa-circle-o",
+    }, {
+        id: "14",
+        text: "哦哦哦9",
+        pinyin: 'shisi',
+        url: "UI/timeline_iframe.html",
+        ptype: "app",
+        icon: "fa fa-circle-o",
+    }, {
+        id: "15",
+        text: "哦哦哦9",
+        pinyin: 'shiwu',
+        url: "UI/timeline_iframe.html",
+        ptype: "app",
+        icon: "fa fa-circle-o",
+    }
+];
+$(function () {
+    App.setbasePath("../");
+    App.setGlobalImgPath("dist/img/");
+    App.fixIframeCotent();
+
+    // 添加默认首页
+    addTabs({
+        id: '0',
+        title: '首页',
+        close: false,
+        url: 'welcome_iframe.html',
+        ptype: 'home'
+    });
+    // 搜索组件初始化
+    SearchBox(menus);
+});
+</script>
+</body>
+</html>
