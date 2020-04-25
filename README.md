@@ -5,6 +5,7 @@
 
 ## 快速上手
    下载后 直接访问  你的项目目录/pages/index_iframe.html  即可看到效果
+写的仓促 左侧菜单和tabs交互只支持2级，以后有时间升级到无限级
 ## 目录结构
 - build/js/iframe 存放所有关于iframe的源代码，强烈建议修改这里的代码
 - dist/js/app_iframe.js 使用grunt构建工具生成的js，属于打包后的js
